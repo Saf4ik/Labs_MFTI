@@ -5,7 +5,11 @@ from pyrob.api import *
 
 @task
 def task_3_1():
-    pass
+
+    while wall_is_on_the_right() != True:
+        move_right()
+        wall_is_on_the_right()
+
 
 
 if __name__ == '__main__':
