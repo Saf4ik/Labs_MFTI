@@ -2,40 +2,31 @@ import graphics as gr
 
 window = gr.GraphWin("Sirius project", 600, 600)
 
-my_circle1 = gr.Circle(gr.Point(200, 200), 50)
-my_circle2 = gr.Circle(gr.Point(310, 200), 50)
-my_circle3 = gr.Circle(gr.Point(420, 200), 50)
-my_circle4 = gr.Circle(gr.Point(255, 260), 50)
-my_circle5 = gr.Circle(gr.Point(365, 260), 50)
 
-my_circle1.setWidth(5)
-my_circle2.setWidth(5)
-my_circle3.setWidth(5)
-my_circle4.setWidth(5)
-my_circle5.setWidth(5)
-
-my_circle1.setOutline("blue")
-my_circle2.setOutline("black")
-my_circle3.setOutline("red")
-my_circle4.setOutline("orange")
-my_circle5.setOutline("green")
-
-my_rectangle1 = gr.Rectangle(gr.Point(1,1), gr.Point(160,40))
-my_rectangle2 = gr.Rectangle(gr.Point(1,40),gr.Point(160,80))
-my_rectangle3 = gr.Rectangle(gr.Point(1,80),gr.Point(160,120))
-
-my_rectangle2.setFill("blue")
-my_rectangle3.setFill("red")
+def draw_circle(x, y, size, color, width=5):
+    my_circle = gr.Circle(gr.Point(x, y), size)
+    my_circle.setWidth(width)
+    my_circle.setOutline(color)
+    my_circle.draw(window)
 
 
-my_rectangle1.draw(window)
-my_rectangle2.draw(window)
-my_rectangle3.draw(window)
-my_circle1.draw(window)
-my_circle2.draw(window)
-my_circle3.draw(window)
-my_circle4.draw(window)
-my_circle5.draw(window)
+def draw_rectangle(x1, y1, x2, y2, color):
+    my_rectangle = gr.Rectangle(gr.Point(x1, y1), gr.Point(x2, y2))
+    my_rectangle.setFill(color)
+    my_rectangle.draw(window)
+
+
+draw_circle(200, 200, 50, "blue")
+draw_circle(310, 200, 50, "black")
+draw_circle(420, 200, 50, "red")
+draw_circle(255, 260, 50, "orange")
+draw_circle(365, 260, 50, "green")
+
+draw_rectangle(1, 1, 160, 40, "white")
+draw_rectangle(1, 40, 160, 80, "blue")
+draw_rectangle(1, 80, 160, 120, "red")
+
+
 
 window.getMouse()
 
